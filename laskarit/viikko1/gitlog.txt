@@ -1,0 +1,114 @@
+kuosaton@lx2-fuxi003:~/Koulu/ot/ot_viikko1/tiedostoja$ git log --stat | cat
+commit ebdaafc667a95f3292994e62f173c05f8d2e3f6b
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:48:02 2024 +0200
+
+    tiedostorumba: electric boogaloo t.11 liittyen
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d47ff929d652d78409bd216550ba4c2855d3afc7
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:44:34 2024 +0200
+
+    luotu sälää t.11 liittyen
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 4d06f840542cde12b4b38db1de4f10d32efee43b
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:39:10 2024 +0200
+
+    muokkauksia t.9 liittyen
+
+ eka.txt    | 10 +---------
+ kolmas.txt |  4 +++-
+ 2 files changed, 4 insertions(+), 10 deletions(-)
+
+commit b92917d781443660a50ec9e57133702c209b8051
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:36:59 2024 +0200
+
+    uudelleennimetty tiedosto.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit dfd3aa5c31ed6e5f0434e96a09465a724dc69974
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:35:55 2024 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2acf0abdc9d8276a0be366cf30e5f40f581ea59c
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:33:28 2024 +0200
+
+    muokattu uudestaan tiedosto.txt
+
+ tiedosto.txt | 15 +++------------
+ 1 file changed, 3 insertions(+), 12 deletions(-)
+
+commit 9ffc4490928830383c1764a7fffd8bcde9d87513
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Wed Mar 13 17:32:05 2024 +0200
+
+    muokattu tiedosto.txt
+
+ tiedosto.txt | 94 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 94 insertions(+)
+
+commit f859367295f137caad945bfc12d670357a6d1ed9
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Tue Mar 12 16:14:00 2024 +0200
+
+    luotu kansio stuff ja jokin tiedosto
+
+ stuff/jokin_tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c449bd69e449690d6160d30fb75d24f4b7f2264c
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Tue Mar 12 16:12:57 2024 +0200
+
+    muokattu toinen.txt ja kolmas.txt
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 9687cb905ab281e9823ce3d9b03ab53158d60150
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Tue Mar 12 16:12:16 2024 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d901e09b979cd2b53441a0d56746d0e9032144bc
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Tue Mar 12 16:10:49 2024 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit d6861561ca77f6e04f535421feba5a3fd480df26
+Author: Tony Kuosa <tony.kuosa@helsinki.fi>
+Date:   Tue Mar 12 16:09:53 2024 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
