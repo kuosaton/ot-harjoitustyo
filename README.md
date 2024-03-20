@@ -16,6 +16,10 @@ _Tässä hieman kursivoitua tekstiä._
 
 [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
 
+### Viikko 2
+
+[laskarit/viikko2/](laskarit/viikko2/)
+
 ## Dokumentaatio
 
 [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
