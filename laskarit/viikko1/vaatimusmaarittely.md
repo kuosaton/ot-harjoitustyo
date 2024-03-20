@@ -2,8 +2,7 @@
 
 ## Sovelluksen tarkoitus
 
-Käyttäjä voi luoda sovelluksessa budjetin ja seurata rahavirtaansa jollakin ajanjaksolla. Käyttäjä lisää budjettiin
-menoja ja tuloja.
+Käyttäjä voi luoda sovelluksessa budjetin ja seurata rahavirtaansa jollakin ajanjaksolla (esim. kuukausi). Käyttäjä voi luoda budjettiin menoja ja tuloja.
 
 ## Käyttäjät
 
