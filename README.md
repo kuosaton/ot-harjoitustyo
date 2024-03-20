@@ -18,6 +18,6 @@ _Tässä hieman kursivoitua tekstiä._
 
 ## Dokumentaatio
 
-[vaatimusmaarittely.md](laskarit/viikko1/vaatimusmaarittely.md)
+[vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
 
 [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
