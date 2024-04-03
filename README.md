@@ -11,18 +11,26 @@ Hakemisto: [/laskarit/](laskarit/)
 
 ### Viikko 1
 
+Hakemisto: [/laskarit/viikko1/](/laskarit/viikko1/)
+
+- [gitlog.txt](/laskarit/viikko1/gitlog.txt)
+
+- [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+
 _Tässä hieman kursivoitua tekstiä._
 
-**Ja tässä lihavoitua tekstiä!**
+### Viikko 2
 
-[gitlog.txt](laskarit/viikko1/gitlog.txt)
+Hakemisto: [/laskarit/viikko2/](/laskarit/viikko2)
 
-[komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+**Dokumentaatio:**
+
+- [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
+
+- [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
+
+### Viikko 3
+
+Hakemisto: [/laskarit/viikko3/](/laskarit/viikko3/)
 
 
-
-## Dokumentaatio
-
-[vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
-
-[tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
