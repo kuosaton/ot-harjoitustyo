@@ -4,7 +4,10 @@
 
 Olen tekemässä budjetointisovellusta.
 
+
 ## Tehtävät
+
+Hakemisto: [/laskarit/](laskarit/)
 
 ### Viikko 1
 
@@ -16,13 +19,6 @@ _Tässä hieman kursivoitua tekstiä._
 
 [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
 
-Hakemisto: [/laskarit/viikko1/](laskarit/viikko1/)
-
-
-### Viikko 2
-
-
-Hakemisto: [/laskarit/viikko2/](laskarit/viikko2/)
 
 
 ## Dokumentaatio
