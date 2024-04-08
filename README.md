@@ -4,6 +4,7 @@
 
 Olen tekemässä budjetointisovellusta.
 
+Hakemisto: [/budjetointisovellus/](/budjetointisovellus/)
 
 ## Tehtävät
 
@@ -25,9 +26,9 @@ Hakemisto: [/laskarit/viikko2/](/laskarit/viikko2)
 
 **Dokumentaatio:**
 
-- [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
+- [vaatimusmaarittely.md](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
 
-- [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
+- [tuntikirjanpito.md](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
 
 ### Viikko 3
 
