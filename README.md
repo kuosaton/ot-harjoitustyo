@@ -6,6 +6,12 @@ Olen tekemässä budjetointisovellusta.
 
 Hakemisto: [/budjetointisovellus/](/budjetointisovellus/)
 
+### Dokumentaatio
+
+- [vaatimusmaarittely.md](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
+
+- [tuntikirjanpito.md](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
+
 ## Tehtävät
 
 Hakemisto: [/laskarit/](laskarit/)
@@ -24,14 +30,10 @@ _Tässä hieman kursivoitua tekstiä._
 
 Hakemisto: [/laskarit/viikko2/](/laskarit/viikko2)
 
-**Dokumentaatio:**
-
-- [vaatimusmaarittely.md](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
-
-- [tuntikirjanpito.md](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
-
 ### Viikko 3
 
 Hakemisto: [/laskarit/viikko3/](/laskarit/viikko3/)
 
+- [monopolipeli.md](laskarit/viikko3/monopolipeli.md)
 
+- [hsl_sekvenssikaavio.md](laskarit/viikko3/hsl_sekvenssikaavio.md)
