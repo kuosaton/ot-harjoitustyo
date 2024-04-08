@@ -1,9 +1,10 @@
 ```mermaid
 sequenceDiagram
     participant main
+    create participant laitehallinto
+    main->>laitehallinto: HKLLaitehallinto()
     create participant rautatietori
     main->>rautatietori: Lataajalaite()
-    participant laitehallinto
     main->>laitehallinto: lisaa_lataaja(rautatietori)
     create participant ratikka6
     main->>ratikka6: Lukijalaite()
@@ -11,7 +12,9 @@ sequenceDiagram
     create participant bussi244
     main->>bussi244: Lukijalaite()
     main->>laitehallinto: lisaa_lukija(bussi244)
-    participant lippu_luukku
+
+    create participant lippu_luukku
+    main->>lippu_luukku: Kioski()
     main->>lippu_luukku: lippu_luukku.osta_matkakortti("Kalle")
     create participant Kalle
     lippu_luukku->>Kalle: Matkakortti("Kalle")
