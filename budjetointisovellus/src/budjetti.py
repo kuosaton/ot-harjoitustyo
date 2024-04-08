@@ -31,10 +31,10 @@ class Budjetti:
         menot = self.laske_menot()
         summa = tulot - menot
 
-        return summa
+        return f"tulot {tulot}€ - menot {menot}€ = {summa}€"
 
     def hae_sisalto(self):
-        return f"Budjetin '{self.nimi}' sisältö: {self.budjetti}, yhteensä {self.laske_summa()}€"
+        return self.budjetti
 
 
     def hae_tulot(self):
@@ -42,14 +42,11 @@ class Budjetti:
         for tulo in self.budjetti["Tulot"]:
             palautus.append(tulo)
 
-        return f"Budjetin '{self.nimi}' tulot: {palautus}, yhteensä {self.laske_tulot()}€"
+        return palautus
 
     def hae_menot(self):
         palautus = []
         for meno in self.budjetti["Menot"]:
             palautus.append(meno)
 
-        return f"Budjetin '{self.nimi}' menot: {palautus}, yhteensä {self.laske_menot()}€"
-
-    def __str__(self):
-        return f"{self.nimi}"
+        return palautus

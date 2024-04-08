@@ -12,6 +12,7 @@ class Kayttoliittyma:
         print(f"4: Hae budjetin tulot")
         print(f"5: Hae budjetin menot")
         print(f"6: Laske budjetin tulot ja menot yhteen")
+        print(f"7: Hae budjetin sisältö")
         print(f"0: Sulje sovellus")
         print("")
 
@@ -21,7 +22,7 @@ class Kayttoliittyma:
         self.ohje()
 
         while True:
-            komento = input("Anna komento syöttämällä luku 0-6: ")
+            komento = input("Anna komento syöttämällä luku 0-7: ")
 
             if komento == "1":
                 nimi = str(input("Anna budjetille nimi: "))
@@ -48,6 +49,9 @@ class Kayttoliittyma:
 
             elif komento == "6":
                 print(self.budjetti.laske_summa())
+
+            elif komento == "7":
+                print(self.budjetti.hae_sisalto())
 
             elif komento == "0":
                 break
