@@ -1,5 +1,9 @@
 # Budjetointisovellus
-Sovelluksen avulla käyttäjän on mahdollista kirjata tuloja ja menoja seuratakseen rahatilannettaan.
+Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjata siihen tuloja ja menoja sekä seurata rahatilannettaan. 
+
+## Python-versio
+> [!NOTE]
+> Sovellus on testattu versiolla `Python 3.10.12` käyttäen [Cubbli](https://helpdesk.it.helsinki.fi/ohjeet/muut-ohjeet/cubbli-helsingin-yliopistossa)-käyttöjärjestelmän fuksiläppäriä sekä [virtuaalityöasemaa](https://vdi.helsinki.fi/), eikä välttämättä toimi oikein, jos käytetty versio on vanhempi kuin `Python 3.8`. 
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
@@ -7,18 +11,23 @@ Sovelluksen avulla käyttäjän on mahdollista kirjata tuloja ja menoja seuratak
 - [Changelog](budjetointisovellus/dokumentaatio/changelog.md)
 
 ## Komentorivitoiminnot
+
 ### Suoritus
-Ohjelma voidaan suorittaa seuraavasti:
+
+Käyttöliittymä on tällä hetkellä tekstipohjainen. Ohjelma voidaan suorittaa seuraavasti:
 ```
 poetry run invoke start
 ```
+
 ### Testaus
-Ohjelmaa voidaan testata seuraavasti:
+Ohjelman testit voidaan suorittaa seuraavasti:
 ```
 poetry run invoke test
 ```
+
 ### Testikattavuusraportti
-Kattavuusraportti luodaan ja avataan automaattisesti selaimeen seuraavalla komennolla:
+
+Ohjelman testikattavuusraportti voidaan luoda seuraavalla komennolla, jolloin se avautuu automaattisesti selaimeen:
 ```
 poetry run invoke coverage-report
 ```
