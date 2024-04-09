@@ -1,41 +1,24 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Budjetointisovellus
+Sovelluksen avulla käyttäjän on mahdollista kirjata tuloja ja menoja seuratakseen rahatilannettaan.
 
-## Budjetointisovellus
+## Dokumentaatio
+- [Vaatimusmäärittely](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
+- [Tuntikirjanpito](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
+- [Changelog](budjetointisovellus/dokumentaatio/changelog.md)
 
-Olen tekemässä budjetointisovellusta.
-
-Hakemisto: [/budjetointisovellus/](/budjetointisovellus/)
-
-### Dokumentaatio
-
-- [vaatimusmaarittely.md](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
-
-- [tuntikirjanpito.md](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
-
-- [changelod.md](budjetointisovellus/dokumentaatio/changelog.md)
-
-## Tehtävät
-
-Hakemisto: [/laskarit/](laskarit/)
-
-### Viikko 1
-
-Hakemisto: [/laskarit/viikko1/](/laskarit/viikko1/)
-
-- [gitlog.txt](/laskarit/viikko1/gitlog.txt)
-
-- [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
-
-_Tässä hieman kursivoitua tekstiä._
-
-### Viikko 2
-
-Hakemisto: [/laskarit/viikko2/](/laskarit/viikko2)
-
-### Viikko 3
-
-Hakemisto: [/laskarit/viikko3/](/laskarit/viikko3/)
-
-- [monopolipeli.md](laskarit/viikko3/monopolipeli.md)
-
-- [hsl_sekvenssikaavio.md](laskarit/viikko3/hsl_sekvenssikaavio.md)
+## Komentorivitoiminnot
+### Suoritus
+Ohjelma voidaan suorittaa seuraavasti:
+```
+poetry run invoke start
+```
+### Testaus
+Ohjelmaa voidaan testata seuraavasti:
+```
+poetry run invoke test
+```
+### Testikattavuusraportti
+Kattavuusraportti luodaan ja avataan automaattisesti selaimeen seuraavalla komennolla:
+```
+poetry run invoke coverage-report
+```
