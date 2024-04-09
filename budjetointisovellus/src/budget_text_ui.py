@@ -8,6 +8,7 @@ class Interface:
         self.jokes = True
 
     def help(self):
+        print("")
         print(f"Commands:")
         print(f"1: Give the budget a name")
         print(f"2: Add new income entry")
@@ -18,8 +19,11 @@ class Interface:
         print(f"7: Calculate sum of income and expenses entries")
         print(f"8: Disable jokes (not recommended)")
         print(f"9: Give another joke (highly recommended)")
-        print(f"Q: Quit")
+        print(f"C: Change budget currency")
         print(f"H: Help")
+        print(f"Q: Quit")
+        print(f"Note: The input processing is case sensitive")
+
 
     def fetch_a_joke(self): # Very important
         joke_entries = {
@@ -40,16 +44,14 @@ class Interface:
             time.sleep(1)
             print(self.fetch_a_joke())
             time.sleep(1)
-            print("")
         else:
             print(f"Welcome to the budget text UI! You have opted to disable jokes, which is a little saddening.")
-            print("")
 
         self.help()
 
         while True:
             print("")
-            command = input("Input any command from 1-9, H for help, or Q to quit: ")
+            command = input("Input a command 1-9 or C to change currency, H for help, Q to quit: ")
 
             if command == "1":
                 name = str(input("Give the budget a name: "))
@@ -57,14 +59,14 @@ class Interface:
                 print("The name of the budget has been set to", self.budget.name)
 
             elif command == "2":
-                name = str(input("Give a title for the entry: "))
-                amount = float(input("Give an amount: "))
-                self.budget.add_expense(name, amount)
+                name = str(input("Name of income entry: "))
+                amount = float(input("Amount: "))
+                self.budget.add_income(name, amount)
                 print("Income entry added!")
 
             elif command == "3":
-                name = str(input("Give a title for the entry: "))
-                amount = float(input("Give an amount: "))
+                name = str(input("Name of expense entry: "))
+                amount = float(input("Amount: "))
                 self.budget.add_expense(name, amount)
                 print("Expense entry added!")
 
@@ -86,15 +88,20 @@ class Interface:
             elif command == "9":
                 print(self.fetch_a_joke())
 
-            elif command == "Q":
-                break
+            elif command == "C":
+                preferred_currency = str(input("Give a new currency unit: "))
+                self.budget.set_currency(preferred_currency)
+                print("New currency set! Currency:", self.budget.currency)
 
             elif command == "H":
                 self.help()
 
+            elif command == "Q":
+                break
+
             else:
+                print("")
                 print("Error: Invalid input :(")
-                self.help()
 
 if __name__ == "__main__":
     budgetInterface = Interface()

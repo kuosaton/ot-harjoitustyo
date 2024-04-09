@@ -24,13 +24,13 @@ class Budget:
         total = 0
         for income in self.budget["Income"]:
             total += income[1]
-        return total, self.currency 
+        return total
 
     def sum_expenses(self): # Same logic as above
         total = 0
         for expense in self.budget["Expenses"]:
             total += expense[1]
-        return total, self.currency
+        return total
 
     def sum_total(self): # Utilizing the earlier functions to return a total sum
         income = self.sum_income()
