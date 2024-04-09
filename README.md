@@ -12,6 +12,8 @@ Hakemisto: [/budjetointisovellus/](/budjetointisovellus/)
 
 - [tuntikirjanpito.md](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
 
+- [changelod.md](budjetointisovellus/dokumentaatio/changelog.md)
+
 ## Tehtävät
 
 Hakemisto: [/laskarit/](laskarit/)
