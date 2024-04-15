@@ -1,45 +1,50 @@
 class Budget:
-    def __init__(self):
-        self.name = "" # Name of the budget
-        self.currency = "€" # The default currency for returned values is Euros. Can be changed by the user
+    def __init__(self, name):
+        self.name = name # Name of budget
+        self.currency = "€" # Currency of budget
 
         # Initialize the budget dict along with income & expense -sublists
-        self.entries = {}
-        self.entries["Income"] = []
-        self.entries["Expense"] = []
+        self.entries = {"Income": [], "Expense": []}
 
-    def name_budget(self, name: str): # Give the budget a name
+    # Set budget name
+    def name_budget(self, name: str): 
         self.name = name
 
-    def set_currency(self, input: str): # Set new currency
+    # Set new currency for budget
+    def set_currency(self, input: str): 
         self.currency = input
 
-    def add_income(self, name: str, amount: float): # Income is added to income-sublist
-        self.entries["Income"].append((name, amount))
+    # Add income entry to budget dict
+    def add_income(self, name, value): 
+        self.entries["Income"].append(f"{name}: {value}")
     
-    def add_expense(self, name: str, amount: float): # Same logic as above
-        self.entries["Expense"].append((name, amount))
+    # Add expense entry to budget dict
+    def add_expense(self, name, value):
+        self.entries["Expense"].append(f"{name}: {value}")
 
-    def sum_income(self): # Sum of the numerical values of income entries
+    # Sum of income
+    def sum_income(self):
         total = 0
         for income in self.entries["Income"]:
             total += income[1]
         return total
 
-    def sum_expenses(self): # Same logic as above
+    # Sum of expenses
+    def sum_expenses(self):
         total = 0
         for expense in self.entries["Expense"]:
             total += expense[1]
         return total
 
-    def sum_total(self): # Utilizing the earlier functions to return a total sum
+    # Total sum
+    def sum_total(self):
         income = self.sum_income()
         expenses = self.sum_expenses()
         total = income - expenses
         return total
 
-    def fetch_income_entries(self): # Return income entries from budget dict
+    def fetch_income_entries(self):
         return self.entries["Income"]
 
-    def fetch_expenses_entries(self): # Same logic as above
+    def fetch_expenses_entries(self):
         return self.entries["Expense"]

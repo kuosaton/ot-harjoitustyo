@@ -1,18 +1,20 @@
 import sys
 import os
-sys.path.append(os.path.abspath('../')) # lisätään juurikansio src pythonin hakupolkuun luokan Budget hakemista varten
+sys.path.append(os.path.abspath('../')) # For finding the budget file
 from budget import Budget
+
 import tkinter as tk
-from tkinter import Tk, ttk, constants, IntVar, Listbox, Variable
+from tkinter import ttk, constants, IntVar, Listbox, StringVar, IntVar
 
 class BudgetView:
-    def __init__(self, root, budget, handle_return):
+    def __init__(self, root, budget_name, handle_return):
         self._root = root
-        self._budget = budget
-        self._handle_return = handle_return
+        self._handle_return = handle_return # For returning to the overview screen
         self._frame = None
+        self._entries_frame = None
 
-        self._init()
+        self._initialize_budget(budget_name)
+        self._start()
 
     def pack(self):
         self._frame.pack(fill=constants.X)
@@ -20,79 +22,100 @@ class BudgetView:
     def destroy(self):
         self._frame.destroy()
 
-    def _init(self):
-        self._frame = ttk.Frame(master=self._root)
-        title_label = ttk.Label(master=self._frame, text=f"Viewing budget: {self._budget.name}")
+    def _initialize_budget(self, name):
+        self._budget = Budget(name)
 
-        entry_heading_label = ttk.Label(master=self._frame, text="Create a new entry: ")
-        name_entry_label = ttk.Label(master=self._frame, text="Name of entry")
-        self._name_entry = ttk.Entry(master=self._frame)
-        value_entry_label = ttk.Label(master=self._frame, text="Value of entry")
-        self._value_entry = ttk.Entry(master=self._frame)
-        
+    # Initialize name field for entry creation
+    def _create_entry_name_field(self):
+        entry_name_label = ttk.Label(master=self._frame, text="Entry name")
+        self._entry_name_entry = ttk.Entry(master=self._frame)
+
+        entry_name_label.pack()
+        self._entry_name_entry.pack()
+
+    # Initialize value field for entry creation
+    def _create_entry_value_field(self):
+        entry_value_label = ttk.Label(master=self._frame, text="Entry value")
+        self._entry_value_entry = ttk.Entry(master=self._frame)
+
+        entry_value_label.pack()
+        self._entry_value_entry.pack()
+
+    # Initialize toggle button for entry type selection
+    def _create_entry_type_checkbutton(self):
         self._entry_type = IntVar()   
         
-        entry_type_toggle = ttk.Checkbutton(
+        entry_type_checkbutton = ttk.Checkbutton(
             master=self._frame,
-            text = "Checked = income entry, unchecked = expense entry",
+            text = "Check for income entry, uncheck for expense entry",
             variable=self._entry_type,
             onvalue = 1,
             offvalue = 0
         )
 
+        entry_type_checkbutton.pack()
+
+    # This function creates/replaces the entry list frame for the GUI
+    def _create_entries_list(self):
+        if self._entries_frame:
+            self._entries_frame.destroy()
+
+        self._entries_frame = ttk.Frame(master=self._frame)
+        self._entries_frame.pack(expand=True, fill=tk.BOTH)
+
+        # Fetch entries
+        income_var = StringVar(value=self._budget.entries["Income"])
+        expense_var = StringVar(value=self._budget.entries["Expense"])
+
+        # Create listboxes for the budget entries
+        income_entries_title_label = ttk.Label(master=self._entries_frame, text="Income entries:")
+        income_entries_listbox = Listbox(master=self._entries_frame, listvariable=income_var)
+
+        expense_entries_title_label = ttk.Label(master=self._entries_frame, text="Expense entries:")
+        expense_entries_listbox = Listbox(master=self._entries_frame, listvariable=expense_var)
+
+        income_entries_title_label.pack()
+        income_entries_listbox.pack(expand=True, fill=tk.BOTH)
+
+        expense_entries_title_label.pack()
+        expense_entries_listbox.pack(expand=True, fill=tk.BOTH)
+
+    def _start(self):
+        self._frame = ttk.Frame(master=self._root)
+        title_label = ttk.Label(master=self._frame, text=f"Viewing budget: {self._budget.name}")
+        title_label.pack()
+
+        # Initialize user input fields
+        self._create_entry_name_field()
+        self._create_entry_value_field()
+        self._create_entry_type_checkbutton()
+
+        # Initalize input submit button
         submitButton = ttk.Button(
             master=self._frame,
             text="Create entry",
-            command=self._handle_button_click
+            command=self._handle_entry_creation
         )
 
+        # Initialize exit button
         returnButton = ttk.Button(
             master=self._frame,
             text="Return to overview",
-            command=self._handle_return
+            command=self._handle_return, 
         )
 
-        title_label.pack()
-        returnButton.pack()
-        entry_heading_label.pack()
-        name_entry_label.pack()
-        self._name_entry.pack()
-        value_entry_label.pack()
-        self._value_entry.pack()
-        entry_type_toggle.pack()
         submitButton.pack()
+        returnButton.pack()
 
-    def _handle_button_click(self):
-        entry_name = self._name_entry.get()
-        entry_value = self._value_entry.get()
+    # When called, this function creates a new entry and calls create_entries_list() to show updated entries
+    def _handle_entry_creation(self):
+        entry_name = self._entry_name_entry.get()
+        entry_value = self._entry_value_entry.get()
         entry_type_value = self._entry_type.get()
 
         if entry_type_value == 1:
             self._budget.add_income(entry_name, entry_value)
         elif entry_type_value == 0:
             self._budget.add_expense(entry_name, entry_value)
-
-        self.show_entries()
-
-    def show_entries(self):
-        self._frame = ttk.Frame(master=self._root)
-
-        self._income_entries = self._budget.entries["Income"]
-        self._expense_entries = self._budget.entries["Expense"]
-
-        income_entries_title_label = ttk.Label(master=self._frame, text="Income entries:")
-        self._income_entries_listbox = Listbox(
-            master = self._root,
-            listvariable = Variable(value=self._income_entries)
-        )
-
-        expense_entries_title_label = ttk.Label(master=self._frame, text="Expense entries:")
-        self._expense_entries_listbox = Listbox(
-            master = self._root,
-            listvariable = Variable(value=self._expense_entries)
-        )
-        income_entries_title_label.pack()
-        self._income_entries_listbox.pack(expand=True, fill=tk.BOTH)
-        expense_entries_title_label.pack()
-        self._expense_entries_listbox.pack(expand=True, fill=tk.BOTH)
-
+        
+        self._create_entries_list()
