@@ -14,7 +14,7 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 
 ### Suoritus
 
-Käyttöliittymä on tällä hetkellä tekstipohjainen. Ohjelma voidaan suorittaa seuraavasti:
+Ohjelman käyttöliittymä voidaan käynnistää seuraavasti:
 ```
 poetry run invoke start
 ```
