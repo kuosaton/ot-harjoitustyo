@@ -16,7 +16,7 @@ class StartView:
 
     # Initialize name field for creating budget
     def _create_budget_name_field(self):
-        budget_name_label = ttk.Label(master=self._frame, text="Name of budget")
+        budget_name_label = ttk.Label(master=self._frame, text="Name of budget:")
         self._budget_name_entry = ttk.Entry(master=self._frame)
 
         budget_name_label.pack()
@@ -24,7 +24,7 @@ class StartView:
 
     def _start(self):
         self._frame = ttk.Frame(master=self._root)
-        title_label = ttk.Label(master=self._frame, text="Overview")
+        title_label = ttk.Label(master=self._frame, text="Welcome! Create a budget below.")
         title_label.pack()
 
         self._create_budget_name_field()

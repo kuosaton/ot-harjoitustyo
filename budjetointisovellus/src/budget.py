@@ -16,11 +16,11 @@ class Budget:
 
     # Add income entry to budget dict
     def add_income(self, name, value): 
-        self.entries["Income"].append(f"{name}: {value}")
+        self.entries["Income"].append(f"{name}: {value} {self.currency}")
     
     # Add expense entry to budget dict
     def add_expense(self, name, value):
-        self.entries["Expense"].append(f"{name}: {value}")
+        self.entries["Expense"].append(f"{name}: {value} {self.currency}")
 
     # Sum of income
     def sum_income(self):

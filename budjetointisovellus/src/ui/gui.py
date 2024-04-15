@@ -1,8 +1,7 @@
-from tkinter import Tk
-from start_view import StartView
-from budget_view import BudgetView
+from ui.start_view import StartView
+from ui.budget_view import BudgetView
 
-class UI:
+class GUI:
     def __init__(self, root):
         self._root = root
         self._current_view = None
@@ -39,12 +38,3 @@ class UI:
         )
 
         self._current_view.pack()
-
-
-window = Tk()
-window.title("Budgeting App")
-
-ui = UI(window)
-ui.start()
-
-window.mainloop()

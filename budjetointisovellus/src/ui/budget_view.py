@@ -1,10 +1,6 @@
-import sys
-import os
-sys.path.append(os.path.abspath('../')) # For finding the budget file
 from budget import Budget
-
 import tkinter as tk
-from tkinter import ttk, constants, IntVar, Listbox, StringVar, IntVar
+from tkinter import ttk, constants, IntVar, Listbox, StringVar
 
 class BudgetView:
     def __init__(self, root, budget_name, handle_return):
@@ -27,7 +23,7 @@ class BudgetView:
 
     # Initialize name field for entry creation
     def _create_entry_name_field(self):
-        entry_name_label = ttk.Label(master=self._frame, text="Entry name")
+        entry_name_label = ttk.Label(master=self._frame, text="Give a name:")
         self._entry_name_entry = ttk.Entry(master=self._frame)
 
         entry_name_label.pack()
@@ -35,7 +31,7 @@ class BudgetView:
 
     # Initialize value field for entry creation
     def _create_entry_value_field(self):
-        entry_value_label = ttk.Label(master=self._frame, text="Entry value")
+        entry_value_label = ttk.Label(master=self._frame, text="Give an amount:")
         self._entry_value_entry = ttk.Entry(master=self._frame)
 
         entry_value_label.pack()
@@ -47,7 +43,7 @@ class BudgetView:
         
         entry_type_checkbutton = ttk.Checkbutton(
             master=self._frame,
-            text = "Check for income entry, uncheck for expense entry",
+            text = "Check for income entry, uncheck for expense entry:",
             variable=self._entry_type,
             onvalue = 1,
             offvalue = 0
@@ -82,7 +78,7 @@ class BudgetView:
 
     def _start(self):
         self._frame = ttk.Frame(master=self._root)
-        title_label = ttk.Label(master=self._frame, text=f"Viewing budget: {self._budget.name}")
+        title_label = ttk.Label(master=self._frame, text=f"Viewing budget: {self._budget.name}. Create budget entries below.")
         title_label.pack()
 
         # Initialize user input fields
