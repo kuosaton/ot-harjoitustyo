@@ -13,21 +13,25 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 ## Komentorivitoiminnot
 
 ### Suoritus
-
-Ohjelman käyttöliittymä voidaan käynnistää seuraavasti:
+Ohjelma voidaan käynnistää seuraavasti:
 ```
 poetry run invoke start
 ```
-
 ### Testaus
-Ohjelman testit voidaan suorittaa seuraavasti:
+Testit voidaan suorittaa seuraavasti:
 ```
 poetry run invoke test
 ```
-
-### Testikattavuusraportti
-
-Ohjelman testikattavuusraportti voidaan luoda seuraavalla komennolla, jolloin se avautuu automaattisesti selaimeen:
+### Testikattavuus
+Testikattavuusraportti voidaan luoda seuraavasti:
 ```
 poetry run invoke coverage-report
 ```
+Raportti avautuu automaattisesti selaimeen.
+
+### Pylint
+Pylint-tarkistus voidaan suorittaa komennolla:
+```
+poetry run invoke lint
+```
+Tarkistus on määritelty tiedostossa [.pylintrc](budjetointisovellus/.pylintrc).
