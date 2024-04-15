@@ -11,3 +11,4 @@
 - Sovelluksen toiminnallisuus rajoittuu tällä hetkellä budjetin luomiseen ja tulojen/menojen lisäämiseen
   - Tieto säilyy vain istunnon suorituksen ajan, tavoitteena tulevaisuudessa toteuttaa pysyvä tallennus
 - Muokattu invoke-komennot toimimaan uusilla muutoksilla, `poetry run invoke start` ajaa nyt tiedoston main.py, joka käynnistää graafisen käyttöliittymän
+- Korjattu testikattavuusraportin luonnin estänyt ongelma
