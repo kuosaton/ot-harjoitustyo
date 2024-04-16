@@ -7,7 +7,8 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
-- [Tuntikirjanpito](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
+- [Arkkitehtuurikuvaus](budjetointisovellus/dokumentaatio/arkkitehtuuri.md)
+- [Työaikakirjanpito](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](budjetointisovellus/dokumentaatio/changelog.md)
 
 ## Komentorivitoiminnot
