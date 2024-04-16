@@ -1,24 +1,45 @@
-# Arkkitehtuuri 
+# Arkkitehtuurikuvaus
 
-Sovelluksen tämänhetkisen toiminnallisuuden arkkitehtuurikuvaus.
+Sovelluksen tähänastisen toteutuksen arkkitehtuurikuvaus.
 
+## Rakenne
 
-## Budjetin luominen
-
-1. Sovellus käynnistyy suorittamalla tiedosto `main.py`, jonka luokka `main` käynnistää Tkinter-ikkunan ja alustaa graafisen käyttöliittymän `GUI`-emoluokan.
-2. `GUI` alustaa alaluokan `StartView`. Sovellus avautuu aloitusnäkymään, jossa käyttäjä voi luoda budjetin. Esimerkkinä, käyttäjä luo budjetin nimisyötteellä "Oktoberfest".
-3. `StartView` käsittelee syötteen ja palauttaa sen `GUI`:lle.
-4. `GUI` alustaa alaluokan `BudgetView` nimisyötteen kera. `BudgetView` alustaa `Budget`-luokan olion `Oktoberfest`. 
-5. Sovellus siirtyy budjetin `Oktoberfest` sisäiseen näkymään.
-
-
-> [!NOTE]
-> Esitetyissä sekvenssikaavioissa luokkiin `GUI`, `StartView`, `BudgetView` viitataan yhteisesti termillä `UI`, joka esittää käyttöliittymää kokonaisuudessaan.
-> Alla esitetty pakkauskaavio havainnollistaa tätä rakennetta.
+Ohjelman rakenne on seuraavanlainen. Pakkaus *src* sisältää ohjelman käynnistyksestä vastaavan luokan *main*, sekä sovelluksen käyttämän budjetti-tietokohteen luokan *Budget*. Pakkaus *ui* sisältää ohjelman käyttöliittymästä vastaavat luokat *GUI*, *StartView* ja *BudgetView*.
 
 Pakkauskaavio:
 
-![Screenshot from 2024-04-16 13-35-55](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/d8d7d427-4781-40f4-a2bf-cef202e5ffe5)
+![Pakkauskaavio](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/f9283cae-ff1d-4f20-94cf-04d6c7e650b3)
+
+Luokkakaavio:
+
+![Luokkakaavio](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/f40f41e8-92c5-43dc-9d8b-15793d4f5a50)
+
+Kiinteät viivat kuvaavat luokkien välisiä pysyviä yhteyksiä, ja katkoviivat ei-pysyviä riippuvuuksia luokkien välillä. Luokkien *main* ja *GUI* välillä on pysyvä yhteys. *GUI*:n ja sen alaluokkien *StartView*, *BudgetView* välillä on ei-pysyvä riippuvuus. *BudgetView*:n ja *Budget*:n välillä on pysyvä yhteys, sillä *BudgetView* on tarkasteltavan budjetin graafinen näkymä.
+
+## Käyttöliittymä
+
+Ohjelman käyttöliittymä sisältää kaksi näkymää:
+1. Aloitusnäkymä
+2. Budjettinäkymä
+
+Nämä ovat eriytetty omiin luokkiinsa, ja niiden näyttämisestä vastaa luokka *GUI*. Käyttäjä voi luoda aloitusnäkymässä budjetin. Tällöin siirrytään budjettinäkymään, eli budjetin sisäiseen näkymään, jossa käyttäjä voi lisätä budjettiin tuloja tai menoja.
+
+## Toiminnallisuudet
+
+Esitetään sovelluksen käytöstä esimerkkitilanne sekvenssiokaavioilla. 
+
+> [!NOTE]
+> Tämän dokumentin sekvenssikaavioissa sovelluksen käyttöliittymään eli luokkiin `GUI`, `StartView`, `BudgetView` viitataan yhteisesti termillä `UI` kaavion yksinkertaistamiseksi.
+
+### Budjetin luominen
+
+1. Sovellus käynnistyy suorittamalla tiedosto `main.py`.
+2. Luokka `main` käynnistää Tkinter-ikkunan ja alustaa graafisen käyttöliittymän luokan `GUI`.
+3. `GUI` alustaa luokan `StartView`.
+4. Sovellus avautuu aloitusnäkymään, jossa käyttäjä voi luoda budjetin. Esimerkkinä, käyttäjä luo budjetin nimisyötteellä "Oktoberfest".
+5. `StartView` käsittelee syötteen ja välittää sen `GUI`:lle.
+6. `GUI` alustaa nimisyötteellä luokan `BudgetView`, joka alustaa `Budget`-luokan olion `Oktoberfest`. `BudgetView` on siis riippuvainen luokasta `Budget`
+8. Sovellus siirtyy budjettinäkymään, tässä tapauksessa budjetin `Oktoberfest` sisäiseen näkymään.
 
 
 Sekvenssikaavio:
@@ -26,20 +47,23 @@ Sekvenssikaavio:
 ```mermaid
 sequenceDiagram
   actor User
-  create participant UI
+  participant UI
   User->>UI: start program
   UI->>UI: show_start_view()
-  User->>UI: click "Create budget" button
+  User->>UI: click "Create budget" button, input "Oktoberfest"
   UI->>UI: handle_budget_creation("Oktoberfest")
   UI->>UI: show_budget_view("Oktoberfest")
   UI->>UI: initialize_budget("Oktoberfest")
-  create participant Oktoberfest
+  participant Oktoberfest
   UI->>Oktoberfest: Budget("Oktoberfest")
 ```
 
-## Kirjausten lisääminen budjettiin
-Kun budjetti on luotu, käyttäjä voi lisätä siihen kirjauksia. Esimerkissä käyttäjä syöttää Tammikuun budjetin tulokirjauksen `matkakassa, 800`, ja tämän jälkeen menokirjauksen `nakit ja muusi, 4.80`. 
-Budjetin sisältö tulee näkyviin omassa kehyksessään `entries_frame`, kun budjettiin luodaan ensimmäinen kirjaus. Sovellus luo/päivittää budjetin sisällön kehyksen, kun uusi kirjaus luodaan.
+### Kirjausten lisääminen budjettiin
+1. Kun budjetti on luotu, käyttäjä voi lisätä siihen kirjauksia. Esimerkkitapauksessa olkoon käyttäjä reissunsa alussa, ja lisää budjettiin `Oktoberfest` tulomerkinnän `matkakassa`.
+2. `BudgetView` lisää tulon `Oktoberfest`:n sanakirjaan.
+3. `BudgetView` hakee sanakirjan sisällön ja esittää sen käyttöliittymässä. Sisältö tulee näkyviin omassa kehyksessään `entries_frame`, kun budjettiin luodaan ensimmäinen kirjaus.
+4. Käyttäjä lisää menokirjauksen `nakit ja muusi`. `BudgetView` lisää menon sanakirjaan.
+5. `BudgetView` hakee sanakirjan sisällön ja päivittää sisältönäkymän poistamalla vanhan kehyksen ja luomalla uuden. Sovellus luo/päivittää budjetin sisällön kehyksen, kun uusi kirjaus luodaan.
 
 Sekvenssikaavio:
 
