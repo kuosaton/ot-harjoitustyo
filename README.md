@@ -11,6 +11,22 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 - [Työaikakirjanpito](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](budjetointisovellus/dokumentaatio/changelog.md)
 
+## Asennus
+
+Luo paikallinen kopio repositoriosta:
+
+```
+git clone https://github.com/kuosaton/ot-harjoitustyo
+```
+
+Navigoi kopioidun repositorion kansioon /ot-harjoitustyo/budjettisovellus/ ja asenna riippuvuudet:
+
+```
+poetry install
+```
+
+Tämän jälkeen voit siirtyä komentorivitoimintoihin.
+
 ## Komentorivitoiminnot
 
 ### Suoritus
@@ -28,7 +44,10 @@ Testikattavuusraportti voidaan luoda seuraavasti:
 ```
 poetry run invoke coverage-report
 ```
-Raportti avautuu automaattisesti selaimeen.
+Luotu raportti avautuu automaattisesti selaimeen. 
+
+> [!TIP]
+> Jos raportti ei avaudu automaattisesti tai haluat muuten vain avata sen itse, löydät raportin tarvittaessa *htmlcov*-kansiosta. Tallennuspaikka ilmoitetaan komentorivillä luomisen jälkeen tämän tapaisesti: `Wrote HTML report to htmlcov/index.html`.
 
 ### Pylint
 Pylint-tarkistus voidaan suorittaa komennolla:
