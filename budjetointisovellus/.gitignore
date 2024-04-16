@@ -2,4 +2,4 @@
 .pytest_cache
 htmlcov
 __pycache__
-arkkitehtuuri.uxf
+arkkitehtuuri.uxf # UMLet:n käyttämä tiedostomuoto UML-kaavioita varten. Näistä kaavioista kuvakaappaukset tiedostossa arkkitehtuuri.md
