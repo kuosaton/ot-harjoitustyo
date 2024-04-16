@@ -5,11 +5,11 @@ from tkinter import ttk, constants, IntVar, Listbox, StringVar
 class BudgetView:
     def __init__(self, root, budget_name, handle_return):
         self._root = root
+        self._budget = Budget(budget_name)
         self._handle_return = handle_return # For returning to the overview screen
         self._frame = None
         self._entries_frame = None
 
-        self._initialize_budget(budget_name)
         self._start()
 
     def pack(self):
@@ -17,9 +17,6 @@ class BudgetView:
 
     def destroy(self):
         self._frame.destroy()
-
-    def _initialize_budget(self, name):
-        self._budget = Budget(name)
 
     # Initialize name field for entry creation
     def _create_entry_name_field(self):

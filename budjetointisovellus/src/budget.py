@@ -6,10 +6,6 @@ class Budget:
         # Initialize the budget dict along with income & expense -sublists
         self.entries = {"Income": [], "Expense": []}
 
-    # Set new currency for budget
-    def set_currency(self, newcurrency):
-        self.currency = newcurrency
-
     # Add income entry to budget dict
     def add_income(self, name, value):
         self.entries["Income"].append(f"{name}: {value} {self.currency}")
@@ -38,9 +34,3 @@ class Budget:
         expenses = self.sum_expenses()
         total = income - expenses
         return total
-
-    def fetch_income_entries(self):
-        return self.entries["Income"]
-
-    def fetch_expenses_entries(self):
-        return self.entries["Expense"]
