@@ -31,7 +31,7 @@ class StartView:
 
         create_budget_button = ttk.Button(
             master=self._frame,
-            text="Create",
+            text="Create budget",
             command=self._handle_button_click
         )
 
