@@ -6,7 +6,7 @@
 | 11.4.  |  2   | Graafisen käyttöliittymän toteuttamisen aloitus |
 | 12.4.  |  4   | Graafisen käyttöliittymän toteuttamisen jatkamista. Käyttöliittymä vielä keskeneräinen. |
 | 15.4.  |  4   | Käyttöliittymän toteutuksen ensimmäinen versio valmiiksi, invoke-komennot kuntoon, pylint |
-| 16.4.  |  4   | Dokumentaatio (arkkitehtuurikuvaus, vaatimusmäärittelyt, changelog yms.) kuntoon, testien rajaus oikein, toimivuuden testaus virtuaalityöasemassa, viikon harjoitustyötehtävien läpikäyntiä ja tarkistuksia |
+| 16.4.  |  7   | Dokumentaation (arkkitehtuurikuvaus, vaatimusmäärittelyt, changelog yms.) toteutus/päivitys, testien rajaus oikein, toimivuuden testaus virtuaalityöasemassa, viikon harjoitustyötehtävien läpikäyntiä ja tarkistuksia |
 
 
 
