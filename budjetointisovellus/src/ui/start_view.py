@@ -40,4 +40,5 @@ class StartView:
     # Fetch budget name input and call budget creation function
     def _handle_button_click(self):
         budget_name_entry = self._budget_name_entry.get()
-        self._handle_budget_creation(budget_name_entry)
+        if budget_name_entry:
+            self._handle_budget_creation(budget_name_entry)
