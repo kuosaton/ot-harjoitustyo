@@ -13,7 +13,10 @@
 - Lisätty invoke-komento `poetry run invoke lint`
 
 ## Viikko 5
-- Budjettinäkymä näyttää nyt kirjausten rahamäärät summattuna (menot, tulot, total)
-- Budget-luokkaan tehty muutoksia tämän mahdollistamiseksi
-- Budjetin listanäkymästä voi poistaa kirjauksen klikkaamalla sitä
+
+- Laajennettu graafisen käyttöliittymän toiminnallisuutta, muutoksia luokkiin Budget, BudgetView, StartView
+  - Budjettinäkymä näyttää nyt kirjausten rahamäärien summat (menot, tulot, total)
+  - Luotuja kirjauksia voi poistaa klikkaamalla
+  - Budjettiin lisättävät kirjaukset alustetaan nyt merkkijonon sijasta sisäkkäisenä sanakirjana ja niille annetaan id-luku poistamista varten
+  - Käyttäjäsyötteitä käsittelevät funktiot tarkistavat syötteen oikeellisuuden ennen suoritusta
 - Laajennettu testejä kattamaan koko Budget-luokka
