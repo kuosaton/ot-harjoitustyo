@@ -13,19 +13,16 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 
 ## Asennus
 
-Luo paikallinen kopio repositoriosta:
+1. Lataa projektin lähdekoodi:
+    - Navigoi [release](https://github.com/kuosaton/ot-harjoitustyo/releases)-näkymän viimeisimpään releaseen ja valitse Assets-osiosta *Source code* ladattavaksi.
 
-```
-git clone https://github.com/kuosaton/ot-harjoitustyo
-```
-
-Navigoi kopioidun repositorion kansioon /ot-harjoitustyo/budjettisovellus/ ja asenna riippuvuudet:
+2. Asenna riippuvuudet komennolla:
 
 ```
 poetry install
 ```
 
-Tämän jälkeen voit siirtyä komentorivitoimintoihin.
+Tämän jälkeen voit siirtyä alla oleviin komentorivitoimintoihin ohjelman käyttämiseksi.
 
 ## Komentorivitoiminnot
 
