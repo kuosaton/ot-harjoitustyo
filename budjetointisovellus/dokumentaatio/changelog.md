@@ -1,5 +1,4 @@
 ## Viikko 3
-
 - Aloitettu projektin toteutus
 - Luotu luokat Budget ja Interface
   - Budget sisältää toiminnallisuudet, Interface kutsuu Budgetia
@@ -12,3 +11,9 @@
 - Muokattu invoke-komennot toimimaan uusilla muutoksilla, `poetry run invoke start` ajaa nyt tiedoston main.py, joka käynnistää graafisen käyttöliittymän
 - Korjattu testikattavuusraportin luonnin estänyt ongelma
 - Lisätty invoke-komento `poetry run invoke lint`
+
+## Viikko 5
+- Budjettinäkymä näyttää nyt kirjausten rahamäärät summattuna (menot, tulot, total)
+- Budget-luokkaan tehty muutoksia tämän mahdollistamiseksi
+- Budjetin listanäkymästä voi poistaa kirjauksen klikkaamalla sitä
+- Laajennettu testejä kattamaan koko Budget-luokka
