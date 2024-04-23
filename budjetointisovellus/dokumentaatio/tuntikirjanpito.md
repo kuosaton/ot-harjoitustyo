@@ -7,6 +7,10 @@
 | 12.4.  |  4   | Graafisen käyttöliittymän toteuttamisen jatkamista. Käyttöliittymä vielä keskeneräinen. |
 | 15.4.  |  4   | Käyttöliittymän toteutuksen ensimmäinen versio valmiiksi, invoke-komennot kuntoon, pylint |
 | 16.4.  |  7   | Dokumentaation (arkkitehtuurikuvaus, vaatimusmäärittelyt, changelog yms.) toteutus/päivitys, testien rajaus oikein, toimivuuden testaus virtuaalityöasemassa, viikon harjoitustyötehtävien läpikäyntiä ja tarkistuksia |
+| 22.4.  |  6   | Käyttöliittymän budjettinäkymän toiminnallisuuden laajentamista ja budjetti-luokan muokkauksia tämän mahdollistamiseksi, tehty lisää testejä |
+| 23.4.  |  2   | Dokumentaatio kuntoon viikon 5 osalta, viimeistelyä, ensimmäinen release |
+
+
 
 
 
