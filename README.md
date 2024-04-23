@@ -14,8 +14,10 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 ## Asennus
 
 1. Lataa projektin lähdekoodi:
-    - Navigoi [release](https://github.com/kuosaton/ot-harjoitustyo/releases)-näkymän viimeisimpään releaseen ja valitse Assets-osiosta *Source code* ladattavaksi.
-
+- Navigoi osion [release](https://github.com/kuosaton/ot-harjoitustyo/releases) viimeisimpään releaseen.
+- Valitse releasen Assets-osiosta *Source code*-tiedosto ladattavaksi.
+- Pura pakattu projektin sisältö ja siirry projektin hakemiston kansioon /budjetointisovellus/.
+      
 2. Asenna riippuvuudet komennolla:
 
 ```
@@ -44,7 +46,7 @@ poetry run invoke coverage-report
 Luotu raportti avautuu automaattisesti selaimeen. 
 
 > [!TIP]
-> Jos raportti ei avaudu automaattisesti tai haluat muuten vain avata sen itse, löydät raportin tarvittaessa *htmlcov*-kansiosta. Tallennuspaikka ilmoitetaan komentorivillä luomisen jälkeen tämän tapaisesti: `Wrote HTML report to htmlcov/index.html`.
+> Jos komennon suoritus virtuaalityöasemalla tyssää virheeseen `database is locked`, siirrä tai lataa projektin sisältö hakemistoon `/tmp`. [Ohje](https://ohjelmistotekniikka-hy.github.io/python/toteutus#sqlite-tietokanta-lukkiutuminen-virtuaality%C3%B6asemalla)
 
 ### Pylint
 Pylint-tarkistus voidaan suorittaa komennolla:
