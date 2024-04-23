@@ -17,12 +17,10 @@ Sovelluksessa on alustavasti kaksi eri näkymää:
 - [x] 1. Aloitusnäkymä
   - [x] Näkymässä voi luoda uuden budjetin
   - [ ] Näkymässä voi luoda useamman budjetin
-    - [ ] Näkymässä voi tarkastella kaikkia budjetteja
-    - [ ] Käyttäjä voi navigoida tästä spesifisen budjetin näkymään
 
 - [x] 2. Budjetin sisäinen näkymä
   - [x] Käyttäjä näkee budjetin sisältämät menot ja tulot ja voi luoda niitä
-  - [ ] Näkymä sisältää menojen ja tulojen määrät sekä niiden yhteisen summan
+  - [x] Näkymä sisältää menojen ja tulojen määrät sekä niiden yhteisen summan
 
 ## Suunnitellut toiminnallisuudet
 
@@ -32,18 +30,18 @@ Perusversio tarjoaa seuraavat toiminnallisuudet:
   - [x] Budjetille annetaan luotaessa nimi, esimerkiksi "Rauno Rupikonnan tammikuun budjetti"
 - [x] Menojen ja tulojen luominen budjettiin
   - [x] Luotaessa määritellään, onko luotava kirjaus meno vai tulo, ja annetaan sille nimi ja rahamäärä
-  - [ ] Sovellus tarkistaa, että annetut syötteet ovat kelvollisia
-- [ ] Sovellus laskee ja näyttää budjetin rahatilanteen eli tulojen ja menojen summan
-- [ ] Budjetin tai menon/tulon poisto
+  - [x] Sovellus tarkistaa, että annetut syötteet ovat kelvollisia
+- [x] Sovellus laskee ja näyttää budjetin rahatilanteen eli tulojen ja menojen summan
+- [x] Budjetin tai menon/tulon poisto
 - [ ] Kirjausten pysyvä tallennus
 
 ## Jatkokehitysideoita
-- [ ] Menojen ja tulojen määrien värikoodaus käyttöliittymässä (menot punaisella, tulot vihreällä) 
-- [ ] Mahdollisuus asettaa päivämäärä menoa tai tuloa luotaessa
+- Menojen ja tulojen määrien värikoodaus käyttöliittymässä (menot punaisella, tulot vihreällä) 
+- Mahdollisuus asettaa päivämäärä menoa tai tuloa luotaessa
   - Auttaisi paremmin hahmottamaan rahan liikkumista kuun mittaan 
-- [ ] Budjetin sisältöä (budjetin nimi, menon nimi tai rahamäärä, tulon nimi tai rahamäärä) voisi muokata
-  - Esimerkkikäyttötarkoitus: Käyttäjä tekee kirjoitusvirheen
-- [ ] Säästöt-kategoria
+- Budjetin sisältöä (budjetin nimi, menon nimi tai rahamäärä, tulon nimi tai rahamäärä) voisi muokata
+  - Esimerkkikäyttötarkoitus: Käyttäjä tekee kirjoitusvirheen 
+- Säästöt-kategoria
   - Säästöt ovat menoja, jotka jaettaisiin omaan kategoriaansa rahavirtojen tarkemman seuraamisen saavuttamiseksi. Esim. Nordnet-kuukausisäästösumma, käteispuskuriin menevä kuukausittainen summa
   - Käyttäjä pystyisi näkemään, kuinka suuri osuus tuloista menee säästöihin ja muihin menoihin (esim. ei-säästöjen
     osuus tuloista: 86%
