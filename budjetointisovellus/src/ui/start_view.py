@@ -34,14 +34,17 @@ class StartView:
     def _start(self):
         """Metodi, joka alustaa näkymän."""
         self._frame = ttk.Frame(master=self._root)
-        title_label = ttk.Label(master=self._frame, text="Welcome! Create a budget below.")
+        title_label = ttk.Label(master=self._frame, text="Welcome! Enter a budget below.")
         title_label.pack()
+        create_budget_button_label = ttk.Label(master=self._frame, text="Input a name. If no budget with that name exists, one is created.")
+
+        create_budget_button_label.pack()
 
         self._create_budget_name_field()
 
         create_budget_button = ttk.Button(
             master=self._frame,
-            text="Create budget",
+            text="Enter",
             command=self._handle_button_click
         )
 

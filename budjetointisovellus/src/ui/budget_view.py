@@ -1,6 +1,7 @@
 from budget import Budget
 import tkinter as tk
 from tkinter import ttk, constants, IntVar, Listbox, StringVar, DoubleVar
+import pickle
 
 class BudgetView:
     """Budjetin sisällön näyttämisestä vastaava näkymä."""
@@ -20,7 +21,12 @@ class BudgetView:
         self._frame = None
         self._entries_frame = None
 
-        self._start()
+        if self._load_budget():
+            self._start()
+            self._create_entries_frame()
+        else:
+            self._save_budget()
+            self._start()
 
     def pack(self):
         """Näyttää näkymän."""
@@ -29,6 +35,35 @@ class BudgetView:
     def destroy(self):
         """Tuhoaa näkymän."""
         self._frame.destroy()
+
+    def _save_budget(self):
+        """Metodi, joka vastaa budjetin sisällön tallentamisesta."""
+        with open(f"{self._budget.name}_data.pkl", 'wb') as fp:
+            pickle.dump((self._budget.entries), fp)
+
+        print("Entries saved!")
+
+    def _load_budget(self):
+        """Metodi, joka vastaa budjetin sisällön hakemisesta. Jos kyseiselle nimelle on olemassa tallennustiedosto, se ladataan.
+
+        Returns:
+            Totuusarvo, True jos kyseiselle nimelle on tallennustiedosto, False jos ei ole
+        """
+        try:
+            with open(f"{self._budget.name}_data.pkl", 'rb') as fp:
+                entries = pickle.load(fp)
+                for income in entries["Income"]:
+                    self._budget.add_income(income['name'], income['value'])
+
+                for expense in entries["Expense"]:
+                    self._budget.add_expense(expense['name'], expense['value'])
+
+            print("Previous entries loaded!")
+            return True
+        
+        except FileNotFoundError:
+            print("No previous saved entries found")
+            return False
 
     def _create_entry_name_field(self):
         """Metodi, joka alustaa tekstinsyöttökentän budjetin kirjauksen luomista varten."""
@@ -116,6 +151,7 @@ class BudgetView:
         """
         selected_index = self._income_entries_listbox.curselection()[0]
         self._budget.remove_income_entry(selected_index)
+        self._save_budget()
         self._create_entries_frame()
 
     def _create_expense_entries_list(self):
@@ -137,6 +173,7 @@ class BudgetView:
         """
         selected_index = self._expense_entries_listbox.curselection()[0]
         self._budget.remove_expense_entry(selected_index)
+        self._save_budget()
         self._create_entries_frame()
 
     def _start(self):
@@ -177,6 +214,7 @@ class BudgetView:
                 elif entry_type_value == 0:
                     self._budget.add_expense(entry_name, entry_value)
                 
+                self._save_budget()
                 self._create_entries_frame()
 
         except ValueError:
