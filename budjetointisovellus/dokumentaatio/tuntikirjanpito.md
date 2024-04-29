@@ -9,9 +9,9 @@
 | 16.4.  |  7   | Dokumentaation (arkkitehtuurikuvaus, vaatimusmäärittelyt, changelog yms.) luonti/päivitys, testien rajaus oikein, toimivuuden testaus |
 | 22.4.  |  6   | Käyttöliittymän toiminnallisuuden laajentamista ja budjetti-luokan muokkauksia tämän mahdollistamiseksi, lisää testejä |
 | 23.4.  |  4   | Dokumentaatio kuntoon viikon 5 osalta, ensimmäinen release |
-| 29.4.  |  3   | Docstring-dokumentointi kuntoon luokille, käyttöohjeen teko |
+| 29.4.  |  5   | Pysyvän tallennuksen toteutus, Docstring-dokumentaatio kuntoon luokille, käyttöohjeen teko, dokumentaation päivitys |
 |        |      |   |
-| Yht.   |  42 h |   |
+| Yht.   |  44 h |   |
 
 
 
