@@ -6,6 +6,7 @@ Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjat
 > Sovellus on testattu versiolla `Python 3.10.12` käyttäen [Cubbli](https://helpdesk.it.helsinki.fi/ohjeet/muut-ohjeet/cubbli-helsingin-yliopistossa)-käyttöjärjestelmän fuksiläppäriä sekä [virtuaalityöasemaa](https://vdi.helsinki.fi/). 
 
 ## Dokumentaatio
+- [Käyttöohje](budjetointisovellus/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](budjetointisovellus/dokumentaatio/vaatimusmaarittely.md)
 - [Arkkitehtuurikuvaus](budjetointisovellus/dokumentaatio/arkkitehtuuri.md)
 - [Työaikakirjanpito](budjetointisovellus/dokumentaatio/tuntikirjanpito.md)
