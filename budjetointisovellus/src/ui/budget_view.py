@@ -3,39 +3,51 @@ import tkinter as tk
 from tkinter import ttk, constants, IntVar, Listbox, StringVar, DoubleVar
 
 class BudgetView:
+    """Budjetin sisällön näyttämisestä vastaava näkymä."""
+
     def __init__(self, root, budget_name, handle_return):
+        """Luokan konstruktori. Luo uuden budjetin ja budjettinäkymän.
+
+        Args:
+            root: TKinter-elementti, jonka sisään näkymä alustetaan.
+            budget_name: Merkkijonoarvo, budjetille annettu nimi.
+            handle_return: Kutsuttava-arvo, jota kutsutaan kun palataan aloitusnäkymään.
+        """
+
         self._root = root
         self._budget = Budget(budget_name)
-        self._handle_return = handle_return # For returning to the overview screen
+        self._handle_return = handle_return
         self._frame = None
         self._entries_frame = None
 
         self._start()
 
     def pack(self):
+        """Näyttää näkymän."""
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
         self._frame.destroy()
 
-    # Initialize name field for entry creation
     def _create_entry_name_field(self):
+        """Metodi, joka alustaa tekstinsyöttökentän budjetin kirjauksen luomista varten."""
         entry_name_label = ttk.Label(master=self._frame, text="Give a name:")
         self._entry_name_entry = ttk.Entry(master=self._frame)
 
         entry_name_label.pack()
         self._entry_name_entry.pack()
 
-    # Initialize value field for entry creation
     def _create_entry_value_field(self):
+        """Metodi, joka alustaa arvonsyöttökentän budjetin kirjauksen luomista varten."""
         entry_value_label = ttk.Label(master=self._frame, text="Give an amount:")
         self._entry_value_entry = ttk.Entry(master=self._frame)
 
         entry_value_label.pack()
         self._entry_value_entry.pack()
 
-    # Initialize toggle button for entry type selection
     def _create_entry_type_checkbutton(self):
+        """Metodi, joka alustaa toggle-napin budjetin kirjauksen tyypin valitsemista varten."""
         self._entry_type = IntVar()   
         
         entry_type_checkbutton = ttk.Checkbutton(
@@ -48,8 +60,8 @@ class BudgetView:
         
         entry_type_checkbutton.pack()
 
-    # This function creates/replaces the entry list frame for the GUI
     def _create_entries_frame(self):
+        """Metodi, joka vastaa budjetin sisällön ja rahasummien näyttämisestä."""
         if self._entries_frame:
             self._entries_frame.destroy()
 
@@ -76,8 +88,6 @@ class BudgetView:
         total_sum_label = ttk.Label(master=self._entries_frame, text="Sum of income and expense entries")
         total_sum_listbox = Listbox(master=self._entries_frame, listvariable = total_sum, height=1)
 
-        # Pack up 
-
         income_entries_sum_label.pack()
         income_entries_sum_listbox.pack(expand=True, fill=tk.BOTH)
 
@@ -87,8 +97,8 @@ class BudgetView:
         total_sum_label.pack()
         total_sum_listbox.pack(expand=True, fill=tk.BOTH)
 
-    # Used by _create_entries_frame()
     def _create_income_entries_list(self):
+        """Metodi, joka vastaa budjetin tulokirjausten hakemisesta ja alustamisesta."""
         income_var = StringVar(value=self._budget.get_entries_income_str())
 
         income_entries_title_label = ttk.Label(master=self._entries_frame, text="Income entries")
@@ -98,14 +108,18 @@ class BudgetView:
         self._income_entries_listbox.pack(expand=True, fill=tk.BOTH)
         self._income_entries_listbox.bind('<<ListboxSelect>>', self._handle_income_entry_deletion)
 
-    # Delete listbox entry by clicking it
     def _handle_income_entry_deletion(self, event):
+        """Metodi, joka vastaa budjetin tulokirjauksen poistamisesta.
+        
+        Args:
+            event: Tapahtuma-arvo, joka luodaan käyttäjän klikatessa jotakin budjetin tulokirjausta.
+        """
         selected_index = self._income_entries_listbox.curselection()[0]
         self._budget.remove_income_entry(selected_index)
         self._create_entries_frame()
 
-    # Used by _create_entries_frame()
     def _create_expense_entries_list(self):
+        """Metodi, joka vastaa budjetin menokirjausten hakemisesta ja alustamisesta."""
         expense_var = StringVar(value=self._budget.get_entries_expense_str())
 
         expense_entries_title_label = ttk.Label(master=self._entries_frame, text="Expense entries")
@@ -115,32 +129,32 @@ class BudgetView:
         self._expense_entries_listbox.pack(expand=True, fill=tk.BOTH)
         self._expense_entries_listbox.bind('<<ListboxSelect>>', self._handle_expense_entry_deletion)
 
-    # Delete listbox entry by clicking it
     def _handle_expense_entry_deletion(self, event):
+        """Metodi, joka vastaa budjetin menokirjauksen poistamisesta.
+
+        Args:
+            event: Tapahtuma-arvo, joka luodaan käyttäjän klikatessa jotakin budjetin menokirjausta.
+        """
         selected_index = self._expense_entries_listbox.curselection()[0]
         self._budget.remove_expense_entry(selected_index)
         self._create_entries_frame()
 
-
-    # Initializing the main budget view frame
     def _start(self):
+        """Metodi, joka vastaa budjettinäkymän alustamisesta."""
         self._frame = ttk.Frame(master=self._root)
         title_label = ttk.Label(master=self._frame, text=f"Viewing budget: {self._budget.name}. Create budget entries below.")
         title_label.pack()
 
-        # Initialize user input fields
         self._create_entry_name_field()
         self._create_entry_value_field()
         self._create_entry_type_checkbutton()
 
-        # Initalize input submit button
         submitButton = ttk.Button(
             master=self._frame,
             text="Create entry",
             command=self._handle_entry_creation
         )
 
-        # Initialize exit button
         returnButton = ttk.Button(
             master=self._frame,
             text="Return to overview",
@@ -150,16 +164,14 @@ class BudgetView:
         submitButton.pack()
         returnButton.pack()
 
-    # When called, this function creates a new entry and calls create_entries_list() to show updated entries
     def _handle_entry_creation(self):
-        # Get user input
+        """Metodi, joka vastaa käyttäjäsyötteen käsittelystä budjetin kirjauksen luomiseksi."""
         try:
             entry_name = self._entry_name_entry.get()
             entry_value = float(self._entry_value_entry.get())
             entry_type_value = self._entry_type.get()
 
             if entry_name and entry_value:
-                # Checkbutton used by user to define desired entry type
                 if entry_type_value == 1:
                     self._budget.add_income(entry_name, entry_value)
                 elif entry_type_value == 0:
@@ -167,6 +179,5 @@ class BudgetView:
                 
                 self._create_entries_frame()
 
-        # Do nothing if input values are not of expected type
         except ValueError:
             pass
