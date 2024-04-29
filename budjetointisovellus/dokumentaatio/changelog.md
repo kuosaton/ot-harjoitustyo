@@ -20,3 +20,10 @@
   - Budjettiin lisättävät kirjaukset alustetaan nyt merkkijonon sijasta sisäkkäisenä sanakirjana ja niille annetaan id-luku poistamista varten
   - Käyttäjäsyötteitä käsittelevät funktiot tarkistavat syötteen oikeellisuuden ennen suoritusta
 - Laajennettu testejä kattamaan koko Budget-luokka
+
+## Viikko 6
+
+- Toteutettu ensimmäinen pysyvän tallennuksen ratkaisu, muutoksia luokkaan BudgetView
+  - Ohjelmassa on nyt mahdollista luoda useita budjetteja, jotka tallennetaan budjettikohtaisiin tiedostoihin
+  - Budjetteja haetaan nimellä, ja jos kyseisellä nimellä ei ole olemassa budjettitiedostoa, luodaan uusi
+- Docstring-dokumentaatio luokkiin main, Budget, GUI, BudgetView, StartView
