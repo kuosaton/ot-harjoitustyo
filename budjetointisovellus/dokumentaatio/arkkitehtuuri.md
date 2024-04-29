@@ -26,7 +26,7 @@ Nämä ovat eriytetty omiin luokkiinsa, ja niiden näyttämisestä vastaa luokka
 
 ## Toiminnallisuudet
 
-Esitetään sovelluksen käytöstä esimerkkitilanne sekvenssiokaavioilla. 
+Esitetään sovelluksen käytöstä esimerkkitilanne sekvenssikaavioilla. 
 
 > [!NOTE]
 > Tämän dokumentin sekvenssikaavioissa sovelluksen käyttöliittymään eli luokkiin `GUI`, `StartView`, `BudgetView` viitataan yhteisesti termillä `UI` kaavion yksinkertaistamiseksi.
@@ -59,8 +59,10 @@ sequenceDiagram
 ```
 
 ### Kirjausten lisääminen budjettiin
+
+0. Kun siirrytään budjettinäkymään, `BudgetView` tarkistaa, onko kyseisellä nimellä olemassa tallennustiedostoa. Tässä esimerkissä ei ole, joten luodaan uusi tiedosto `Oktoberfest_data.pkl`.
 1. Kun budjetti on luotu, käyttäjä voi lisätä siihen kirjauksia. Esimerkkitapauksessa olkoon käyttäjä reissunsa alussa, ja lisää budjettiin `Oktoberfest` tulomerkinnän `matkakassa`.
-2. `BudgetView` lisää tulon `Oktoberfest`:n sanakirjaan.
+2. `BudgetView` lisää tulon `Oktoberfest`:n sanakirjaan ja tallentaa muutokset budjetin datan tiedostoon.
 3. `BudgetView` hakee sanakirjan sisällön ja esittää sen käyttöliittymässä. Sisältö tulee näkyviin omassa kehyksessään `entries_frame`, kun budjettiin luodaan ensimmäinen kirjaus.
 4. Käyttäjä lisää menokirjauksen `nakit ja muusi`. `BudgetView` lisää menon sanakirjaan.
 5. `BudgetView` hakee sanakirjan sisällön ja päivittää sisältönäkymän poistamalla vanhan kehyksen ja luomalla uuden. Sovellus luo/päivittää budjetin sisällön kehyksen, kun uusi kirjaus luodaan.
@@ -71,10 +73,15 @@ Sekvenssikaavio:
 sequenceDiagram
   actor User
   participant UI
+  UI->>UI: load_budget()
+  UI->>UI: FileNotFoundError
   participant Oktoberfest
+  UI->>UI: save_budget()
+  UI->>UI: start()
   User->>UI: click "Create entry" button
   UI->>UI: handle_entry_creation()
   UI->>Oktoberfest: add_income(matkakassa, 400)
+  UI->>UI: save_budget()
   UI->>UI: create_entries_list()
   UI->>Oktoberfest: entries["Income"]
   Oktoberfest-->>UI: matkakassa, 400
@@ -83,6 +90,7 @@ sequenceDiagram
   User->>UI: click "Create entry" button
   UI->>UI: handle_entry_creation()
   UI->>Oktoberfest: add_expense(nakit ja muusi, 4.80)
+  UI->>UI: save_budget()
   UI->>UI: create_entries_list()
   UI->>Oktoberfest: entries["Income"]
   Oktoberfest-->>UI: matkakassa, 400
