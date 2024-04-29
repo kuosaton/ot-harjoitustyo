@@ -16,7 +16,8 @@ Sovelluksessa on alustavasti kaksi eri näkymää:
 
 - [x] 1. Aloitusnäkymä
   - [x] Näkymässä voi luoda uuden budjetin
-  - [ ] Näkymässä voi luoda useamman budjetin
+  - [x] Näkymässä voi luoda useamman budjetin ja budjetteihin voi siirtyä
+  - [ ] Näkymä näyttää olemassa olevat budjetit listana
 
 - [x] 2. Budjetin sisäinen näkymä
   - [x] Käyttäjä näkee budjetin sisältämät menot ja tulot ja voi luoda niitä
@@ -33,7 +34,7 @@ Perusversio tarjoaa seuraavat toiminnallisuudet:
   - [x] Sovellus tarkistaa, että annetut syötteet ovat kelvollisia
 - [x] Sovellus laskee ja näyttää budjetin rahatilanteen eli tulojen ja menojen summan
 - [x] Budjetin tai menon/tulon poisto
-- [ ] Kirjausten pysyvä tallennus
+- [x] Kirjausten pysyvä tallennus
 
 ## Jatkokehitysideoita
 - Menojen ja tulojen määrien värikoodaus käyttöliittymässä (menot punaisella, tulot vihreällä) 
