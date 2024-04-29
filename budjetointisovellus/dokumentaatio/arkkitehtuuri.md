@@ -4,7 +4,7 @@ Sovelluksen tähänastisen toteutuksen arkkitehtuurikuvaus.
 
 ## Rakenne
 
-Ohjelman rakenne on seuraavanlainen. Pakkaus *src* sisältää ohjelman käynnistyksestä vastaavan luokan *main*, sekä sovelluksen käyttämän budjetti-tietokohteen luokan *Budget*. Pakkaus *ui* sisältää ohjelman käyttöliittymästä vastaavat luokat *GUI*, *StartView* ja *BudgetView*.
+Ohjelman rakenne on seuraavanlainen. Pakkaus *src* sisältää ohjelman käynnistyksestä vastaavan luokan *main*, sekä sovelluksen käyttämän budjetti-tietokohteen luokan *Budget*. Pakkaus *ui* sisältää ohjelman käyttöliittymästä vastaavat luokat *GUI*, *StartView* ja *BudgetView*. *BudgetView* tallentaa budjetin sisältösanakirjan budjetin nimen mukaiseen .pkl-tiedostoon.
 
 Pakkauskaavio:
 
@@ -12,9 +12,7 @@ Pakkauskaavio:
 
 Luokkakaavio:
 
-![Luokkakaavio](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/f40f41e8-92c5-43dc-9d8b-15793d4f5a50)
-
-Kiinteät viivat kuvaavat luokkien välisiä pysyviä yhteyksiä, ja katkoviivat ei-pysyviä riippuvuuksia luokkien välillä. Luokkien *main* ja *GUI* välillä on pysyvä yhteys. *GUI*:n ja sen alaluokkien *StartView*, *BudgetView* välillä on ei-pysyvä riippuvuus. *BudgetView*:n ja *Budget*:n välillä on pysyvä yhteys, sillä *BudgetView* on tarkasteltavan budjetin graafinen näkymä.
+![Luokkakaavio](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/c68da694-b234-4da8-a077-68ed1bbfac31)
 
 ## Käyttöliittymä
 
