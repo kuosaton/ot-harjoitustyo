@@ -23,11 +23,12 @@ poetry run invoke start
 
 ## Aloitus
 
-Sovellus aukeaa aloitusnäkymään, jossa käyttäjä syöttää budjetille haluamansa nimen ja luo budjetin.
+Sovellus aukeaa aloitusnäkymään, jossa käyttäjä syöttää budjetille haluamansa nimen ja luo budjetin. Mikäli budjetille on jo olemassa tallennustiedosto, kyseinen tiedosto ja sen sisältö ladataan. Muussa tapauksessa nimellä luodaan uusi tiedosto.
 
 Annettu syöte tarkistetaan, eli jos syöte on tyhjä, sovellus ei tee mitään.
 
-![sovellus_aloitus](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/6a75fe45-4798-45dc-94b9-a61070f6c5cc)
+![Screenshot from 2024-04-29 19-06-50](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/dcac5fc6-719b-484b-8ba5-15d25cf10a27)
+
 
 ## Budjetti
 
@@ -35,11 +36,22 @@ Budjetin luotuaan käyttäjä viedään budjettinäkymään, jossa käyttäjä v
 
 Annettu syöte jälleen tarkistetaan. Jos jokin syötteistä on tyhjä tai annettu rahasyöte ei ole kelvollinen luku, sovellus ei tee mitään.
 
-![Screenshot from 2024-04-29 17-34-39](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/05cadf64-e6a0-4cb0-a333-10653d26f343)
+Jos annetaan kokonaan uusi nimi tai yhtään budjettia ei ole vielä löyty, budjetin näkymä avautuu seuraavanlaisena ilman sisältönäkymää.
 
-Kun ensimmäinen kirjaus on luotu, näkymä avaa budjetin sisällön näkymän. Tämä alinäkymä näyttää budjetin sisällön sekä rahamäärien summat.
+Esimerkkikuvassa annetulla nimisyötteellä "testi2" ei löytynyt olemassa olevaa tiedostoa.
 
-![Screenshot from 2024-04-29 17-35-20](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/8dc6524a-2322-43bb-93cf-9f38d4b99e3c)
+![Screenshot from 2024-04-29 19-10-39](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/2179ec91-2f3a-4eab-abb3-7ddf6e7446d5)
+
+
+Kun ensimmäinen kirjaus on luotu budjettiin "testi2", näkymä avaa budjetin sisällön näkymän. Tämä alinäkymä näyttää budjetin sisällön sekä rahamäärien summat.
+
+![Screenshot from 2024-04-29 19-12-35](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/74e1f72b-c58a-4436-ae4f-e8263183ed26)
+
+
+Esimerkkikuvassa annetulla nimisyötteellä "testi" vuorostaan löytyi käyttäjän hakemistosta olemassa oleva tiedosto kuvakaappauksessa näkyvine merkintöineen, joten ne ladattiin suoraan budjetin sisältönäkymään.
+
+![Screenshot from 2024-04-29 19-09-14](https://github.com/kuosaton/ot-harjoitustyo/assets/120479105/f2506928-a851-4d0d-b9f3-895ece0e36ce)
+
 
 Jos luo menoksi tarkoitetun kirjauksen vahingossa tulona, ei hätää – luodun kirjauksen voi poistaa klikkaamalla sitä.
 
@@ -55,4 +67,4 @@ Kirjauksen poisto on hyödyllinen ominaisuus myös luotaessa vahingossa ylimää
 
 ## Paluu aloitusnäkymään
 
-Klikkaamalla "Return to overview"-nappia käyttäjä palaa aloitusnäkymään, ja luotu budjetti sulkeutuu. 
+Klikkaamalla "Return to overview"-nappia käyttäjä palaa aloitusnäkymään, ja luotu budjetti sulkeutuu. Budjetin viimeisin muokkaus on tallennettu, ja voidaan avata uudelleen syöttämällä kyseisen budjetin nimi. 
