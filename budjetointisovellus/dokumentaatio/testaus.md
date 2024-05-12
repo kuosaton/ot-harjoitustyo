@@ -26,7 +26,7 @@ Sovelluksen on myös tarkistettu toimivan odotetusti näissä ympäristöissä, 
 
 Kaikkien [vaatimusmäärittelyssä](vaatimusmaarittely.md) ja käyttöohjeessa esitettyjen toiminnallisuuksien on testattu toimivan odotetusti monenlaisilla syötteillä, niin kelvollisilla kuin kelvottomillakin (esim. tyhjä syöte, ei-numeerinen rahasyöte). 
 
-Odotetusti toimiminen tarkoittaa tässä tapauksessa sitä, että ohjelma ei käsittele virheellisiä syötteitä, ja kelvollisen syötteen käsitellessä päivittää budjetin odotetusti ja palauttaa oikein lasketut meno/tulo/total -rahasummat. 
+- Odotetusti toimiminen tarkoittaa tässä tapauksessa sitä, että ohjelma ei käsittele virheellisiä syötteitä, ja kelvollisen syötteen käsitellessä päivittää budjetin odotetusti ja palauttaa oikein lasketut    meno/tulo/total -rahasummat. 
 
 Ohjelman on testattu toimivan oikein budjetin kirjauksia poistettaessa, eikä mene sekaisin, vaikka käyttäjä kuinka rämpyttäisi menemään budjettikirjausten luontien ja poistojen kanssa. Budjetin sisältö ja ohjelman esittämät rahasummat pysyvät oikeellisina.
 
@@ -35,9 +35,8 @@ Testatessa on kokeiltu sekä olemassaolevan budjettitiedoston lataamista että u
 ## Sovellukseen jääneet laatuongelmat
 
 1. Sovellus ei tämänhetkisessä toiminnallisuustilassaan ilmoita käyttäjälle annetun syötteen olevan virheellinen, vaan on tekemättä mitään.
-- Tätä voisi vielä parantaa hiukan. Käyttäjäkokemuksen kannalta olisi selkeämpää, jos sovellus ilmoittaisi käyttäjälle tämän antaman syötteen olevan ei-kelvollinen.
+   - Tätä voisi vielä parantaa hiukan. Käyttäjäkokemuksen kannalta olisi selkeämpää, jos sovellus ilmoittaisi käyttäjälle tämän antaman syötteen olevan ei-kelvollinen.
 
-3. Koska ohjelman tämänhetkisessä versiossa budjetin tallentamisen tiedostoon hoitaa käyttöliittymän luokka BudgetView eikä käyttöliittymää huomioida testaamisessa, asettaa tämä pienen kuolleen kulman
+2. Koska ohjelman tämänhetkisessä versiossa budjetin tallentamisen tiedostoon hoitaa käyttöliittymän luokka BudgetView eikä käyttöliittymää huomioida testaamisessa, asettaa tämä pienen kuolleen kulman
    automatisoidun testikattavuuden kokonaisvaltaiseen arviointiin.
-- Tämä seikka on pyritty huomioimaan kokonaisvaltaisilla manuaalisilla järjestelmätestauksilla, jossa on kokeiltu monipuolisesti erilaisia testitilanteita budjettien tallentamisen ja lataamisen
-   suhteen.
+   - Tämä seikka on pyritty huomioimaan kokonaisvaltaisilla manuaalisilla järjestelmätestauksilla, jossa on kokeiltu monipuolisesti erilaisia testitilanteita budjettien tallentamisen ja lataamisen suhteen.
