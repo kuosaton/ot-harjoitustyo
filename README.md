@@ -1,5 +1,5 @@
 # Budjetointisovellus
-Sovelluksen avulla käyttäjän on mahdollista luoda ja nimetä budjetti, kirjata siihen tuloja ja menoja sekä seurata rahatilannettaan. 
+Sovelluksen avulla käyttäjän on mahdollista luoda budjetteja, kirjata niihin tuloja ja menoja sekä seurata rahatilannettaan. 
 
 ## Python-versio
 > [!NOTE]
