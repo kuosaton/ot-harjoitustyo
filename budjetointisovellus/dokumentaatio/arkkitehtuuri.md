@@ -95,3 +95,10 @@ sequenceDiagram
   UI->>Oktoberfest: entries["Expense"]
   Oktoberfest-->>UI: nakit ja muusi, 4.80
 ```
+
+## Ohjelman rakenteeseen jääneet heikkoudet, kehitysideat
+
+Kuten testausdokumentissakin mainittiin, ohjelman käyttöliittymän luokka BudgetView hoitaa tällä hetkellä budjetin sisällön tallentamisen tiedostoihin, ja sisällön lataamisen tiedostoista. Kaikkein suotavinta tällaisten tilanteiden välttämiseksi olisi, että ohjelman toiminnallisuus erotettaisiin täysin käyttöliittymästä. 
+
+Tämän seikan voisi huomioida toteuttamalla ulkopuolisen BudgetService-luokan. Luokan Budget voisi lisäksi erottaa omaksi olio-luokakseen, jolloin sovelluksen toiminnallisuus jätettäisiin kokonaan BudgetService-luokan vastuulle.
+
