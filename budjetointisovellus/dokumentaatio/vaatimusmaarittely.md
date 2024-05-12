@@ -17,7 +17,6 @@ Sovelluksessa on alustavasti kaksi eri näkymää:
 - [x] 1. Aloitusnäkymä
   - [x] Näkymässä voi luoda uuden budjetin
   - [x] Näkymässä voi luoda useamman budjetin ja budjetteihin voi siirtyä
-  - [ ] Näkymä näyttää olemassa olevat budjetit listana
 
 - [x] 2. Budjetin sisäinen näkymä
   - [x] Käyttäjä näkee budjetin sisältämät menot ja tulot ja voi luoda niitä
